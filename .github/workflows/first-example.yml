@@ -8,15 +8,20 @@ jobs:
         steps:
             - name: Checkout Repo
               uses: actions/checkout@v4
-              with:
-                  repository: https://github.com/waditya/actions-01
-            - name: Welcome Message
-              run: echo "My first GitHub Action Job"
-            
-            - name: List Files
-              run: ls
+              
+            - name: List and Read File
+              run: |
+                echo "My first GitHub Action Job"
+                ls -ltra
+                cat README.md
 
-            - name: Read file
-              run: cat README.md
+            - name: Generate ASCII Artwork
+              run: cowsay -f dragon "Run for cover... I am a dragon... RAWR" >> dragon.txt
+            
+            # - name: List Files
+            #   run: ls
+
+            # - name: Read file
+            #   run: cat README.md
               
 
